@@ -78,12 +78,11 @@ if fit_model.history['accuracy'][0] >= .80:
     import getpass
     port = 587  # For starttls
     smtp_server = "smtp.gmail.com"
-    sender_email = "siddcool1011@gmail.com"
-    receiver_email = "coolsidd1997@gmail.com"
+    sender_email = "radhakumari.jbp@gmail.com"
+    receiver_email = "1905101@kiit.ac.in"
     password =getpass.getpass('enter pass ->')
-    message = """Subject: Hi there
-Your model is trained...........
-you can see the logs below.......Happy day sir.......enjoy!!!!!!!!!!!!!
+    message = """Subject:HELLO :)
+YOUR MODEL HAS BEEN SUCCESSFULLY TRAINED..!!!
 Your accuracy is {}""".format(accuracy)
 
     context = ssl.create_default_context()
