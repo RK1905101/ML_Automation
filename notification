@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[4]:
+
+
+import smtplib, ssl
+import getpass
+port = 587  # For starttls
+smtp_server = "smtp.gmail.com"
+sender_email = "radhakumari.jbp@gmail.com"
+receiver_email = "1905101@kiit.ac.in"
+password =getpass.getpass('enter pass ->')
+message = """Subject: Hello there :)
+This is an automated mlops project and this mail is send 
+on behalf of your model>
+SORRY, BUT YOUR MODEL HAS NOT BEEN TRAINED AS YOU DESIRED FOR..!! """
+
+context = ssl.create_default_context()
+with smtplib.SMTP(smtp_server, port) as server:
+    server.ehlo()  # Can be omitted
+    server.starttls(context=context)
+    server.ehlo()  # Can be omitted
+    server.login(sender_email, password)
+    server.sendmail(sender_email, receiver_email, message)
+
+
+# In[ ]:
